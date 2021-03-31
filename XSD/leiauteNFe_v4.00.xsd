@@ -12,7 +12,7 @@
 <!-- PL_009-v4a.3  adequação da lista TCListServ - 10/2018 -->
 <!-- PL_009-v4a.4  implementado alterações da NT 2018.005 -->
 <!-- PL_009-v4b  implementado alterações da NT 2020.006 -->
-<xs:schema xmlns="http://www.portalfiscal.inf.br/nfe" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:editix="http://www.portalfiscal.inf.br/nfe" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.portalfiscal.inf.br/nfe" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns="2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:editix="http://www.portalfiscal.inf.br/nfe" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.portalfiscal.inf.br/nfe" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema_v1.01.xsd"/>
 	<xs:include schemaLocation="tiposBasico_v4.00.xsd"/>
 	<xs:complexType name="TNFe">

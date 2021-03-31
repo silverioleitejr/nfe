@@ -7,13 +7,17 @@ from TestValidador import Validador
 # declaração de variaveis
 xmlPath = 'D:/projetos/og1.kpmg/projetos/python-nfe/XML'
 xmlFile = 'NFe35170171322150001301550000000477551772681010_procNFe.xml'
-xsdFile = 'NFe35170171322150001301550000000477551772681010_procNFe.xsd'
+
+xsdPath = 'D:/projetos/og1.kpmg/projetos/python-nfe/XSD'
+xsdFile = 'NFe35170171322150001301550000000477551772681010_procNFe.xml1.xsd'
 
 _xml = xmlPath + '/' + xmlFile
-_xsd = xmlPath + '/' + xsdFile
+_xsd = xsdPath + '/' + xsdFile
 
-print('path= ', xmlPath)
+print('XML path= ', xmlPath)
 print('XML= ', xmlFile)
+print('------------------------------------------------------')
+print('XSD path= ', xmlPath)
 print('XSD= ', xsdFile)
 
 Arquivo = Validador(_xsd)
@@ -28,3 +32,4 @@ for file_name in os.listdir(xmlPath):
         print('Válido! :)')
     else:
         print('Inválido!  Erro :(')
+        print

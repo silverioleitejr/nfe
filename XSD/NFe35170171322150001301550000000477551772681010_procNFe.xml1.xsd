@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.portalfiscal.inf.br/nfe" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="nfeProc" type="nfe:nfeProcType" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+  <xs:complexType name="NFrefType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="refNFe"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ideType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="cUF"/>
+      <xs:element type="xs:string" name="cNF"/>
+      <xs:element type="xs:string" name="natOp"/>
+      <xs:element type="xs:string" name="indPag"/>
+      <xs:element type="xs:string" name="mod"/>
+      <xs:element type="xs:string" name="serie"/>
+      <xs:element type="xs:string" name="nNF"/>
+      <xs:element type="xs:string" name="dhEmi"/>
+      <xs:element type="xs:string" name="dhSaiEnt"/>
+      <xs:element type="xs:string" name="tpNF"/>
+      <xs:element type="xs:string" name="idDest"/>
+      <xs:element type="xs:string" name="cMunFG"/>
+      <xs:element type="xs:string" name="tpImp"/>
+      <xs:element type="xs:string" name="tpEmis"/>
+      <xs:element type="xs:string" name="cDV"/>
+      <xs:element type="xs:string" name="tpAmb"/>
+      <xs:element type="xs:string" name="finNFe"/>
+      <xs:element type="xs:string" name="indFinal"/>
+      <xs:element type="xs:string" name="indPres"/>
+      <xs:element type="xs:string" name="procEmi"/>
+      <xs:element type="xs:string" name="verProc"/>
+      <xs:element type="nfe:NFrefType" name="NFref" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enderEmitType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="xLgr"/>
+      <xs:element type="xs:string" name="nro"/>
+      <xs:element type="xs:string" name="xBairro"/>
+      <xs:element type="xs:string" name="cMun"/>
+      <xs:element type="xs:string" name="xMun"/>
+      <xs:element type="xs:string" name="UF"/>
+      <xs:element type="xs:string" name="CEP"/>
+      <xs:element type="xs:string" name="cPais"/>
+      <xs:element type="xs:string" name="xPais"/>
+      <xs:element type="xs:string" name="fone"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="emitType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="CNPJ"/>
+      <xs:element type="xs:string" name="xNome"/>
+      <xs:element type="xs:string" name="xFant"/>
+      <xs:element type="nfe:enderEmitType" name="enderEmit" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="xs:string" name="IE"/>
+      <xs:element type="xs:string" name="CRT"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enderDestType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="xLgr"/>
+      <xs:element type="xs:string" name="nro"/>
+      <xs:element type="xs:string" name="xCpl"/>
+      <xs:element type="xs:string" name="xBairro"/>
+      <xs:element type="xs:string" name="cMun"/>
+      <xs:element type="xs:string" name="xMun"/>
+      <xs:element type="xs:string" name="UF"/>
+      <xs:element type="xs:string" name="CEP"/>
+      <xs:element type="xs:string" name="cPais"/>
+      <xs:element type="xs:string" name="xPais"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="destType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="CNPJ"/>
+      <xs:element type="xs:string" name="xNome"/>
+      <xs:element type="nfe:enderDestType" name="enderDest" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="xs:string" name="indIEDest"/>
+      <xs:element type="xs:string" name="IE"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="prodType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="cProd"/>
+      <xs:element type="xs:string" name="cEAN"/>
+      <xs:element type="xs:string" name="xProd"/>
+      <xs:element type="xs:string" name="NCM"/>
+      <xs:element type="xs:string" name="CFOP"/>
+      <xs:element type="xs:string" name="uCom"/>
+      <xs:element type="xs:string" name="qCom"/>
+      <xs:element type="xs:string" name="vUnCom"/>
+      <xs:element type="xs:string" name="vProd"/>
+      <xs:element type="xs:string" name="cEANTrib"/>
+      <xs:element type="xs:string" name="uTrib"/>
+      <xs:element type="xs:string" name="qTrib"/>
+      <xs:element type="xs:string" name="vUnTrib"/>
+      <xs:element type="xs:string" name="indTot"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ICMS20Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="orig"/>
+      <xs:element type="xs:string" name="CST"/>
+      <xs:element type="xs:string" name="modBC"/>
+      <xs:element type="xs:string" name="pRedBC"/>
+      <xs:element type="xs:string" name="vBC"/>
+      <xs:element type="xs:string" name="pICMS"/>
+      <xs:element type="xs:string" name="vICMS"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ICMSType">
+    <xs:sequence>
+      <xs:element type="nfe:ICMS20Type" name="ICMS20" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PISNTType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="CST"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PISType">
+    <xs:sequence>
+      <xs:element type="nfe:PISNTType" name="PISNT" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="COFINSNTType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="CST"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="COFINSType">
+    <xs:sequence>
+      <xs:element type="nfe:COFINSNTType" name="COFINSNT" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="impostoType">
+    <xs:sequence>
+      <xs:element type="nfe:ICMSType" name="ICMS" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:PISType" name="PIS" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:COFINSType" name="COFINS" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="detType">
+    <xs:sequence>
+      <xs:element type="nfe:prodType" name="prod" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:impostoType" name="imposto" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="nItem"/>
+  </xs:complexType>
+  <xs:complexType name="ICMSTotType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="vBC"/>
+      <xs:element type="xs:string" name="vICMS"/>
+      <xs:element type="xs:string" name="vICMSDeson"/>
+      <xs:element type="xs:string" name="vFCPUFDest"/>
+      <xs:element type="xs:string" name="vICMSUFDest"/>
+      <xs:element type="xs:string" name="vICMSUFRemet"/>
+      <xs:element type="xs:string" name="vBCST"/>
+      <xs:element type="xs:string" name="vST"/>
+      <xs:element type="xs:string" name="vProd"/>
+      <xs:element type="xs:string" name="vFrete"/>
+      <xs:element type="xs:string" name="vSeg"/>
+      <xs:element type="xs:string" name="vDesc"/>
+      <xs:element type="xs:string" name="vII"/>
+      <xs:element type="xs:string" name="vIPI"/>
+      <xs:element type="xs:string" name="vPIS"/>
+      <xs:element type="xs:string" name="vCOFINS"/>
+      <xs:element type="xs:string" name="vOutro"/>
+      <xs:element type="xs:string" name="vNF"/>
+      <xs:element type="xs:string" name="vTotTrib"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="totalType">
+    <xs:sequence>
+      <xs:element type="nfe:ICMSTotType" name="ICMSTot" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="volType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="qVol"/>
+      <xs:element type="xs:string" name="pesoL"/>
+      <xs:element type="xs:string" name="pesoB"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="transpType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="modFrete"/>
+      <xs:element type="nfe:volType" name="vol" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fatType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="nFat"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dupType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="nDup"/>
+      <xs:element type="xs:string" name="dVenc"/>
+      <xs:element type="xs:string" name="vDup"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cobrType">
+    <xs:sequence>
+      <xs:element type="nfe:fatType" name="fat" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:dupType" name="dup" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="infAdicType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="infCpl"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="infNFeType">
+    <xs:sequence>
+      <xs:element type="nfe:ideType" name="ide" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:emitType" name="emit" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:destType" name="dest" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:detType" name="det" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:totalType" name="total" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:transpType" name="transp" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:cobrType" name="cobr" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:infAdicType" name="infAdic" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="versao"/>
+    <xs:attribute type="xs:string" name="Id"/>
+  </xs:complexType>
+  <xs:complexType name="NFeType">
+    <xs:sequence>
+      <xs:element type="nfe:infNFeType" name="infNFe" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element ref="xd:Signature" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="infProtType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="tpAmb"/>
+      <xs:element type="xs:string" name="verAplic"/>
+      <xs:element type="xs:string" name="chNFe"/>
+      <xs:element type="xs:string" name="dhRecbto"/>
+      <xs:element type="xs:string" name="nProt"/>
+      <xs:element type="xs:string" name="digVal"/>
+      <xs:element type="xs:string" name="cStat"/>
+      <xs:element type="xs:string" name="xMotivo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="protNFeType">
+    <xs:sequence>
+      <xs:element type="nfe:infProtType" name="infProt" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="versao"/>
+  </xs:complexType>
+  <xs:complexType name="nfeProcType">
+    <xs:sequence>
+      <xs:element type="nfe:NFeType" name="NFe" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+      <xs:element type="nfe:protNFeType" name="protNFe" xmlns:nfe="http://www.portalfiscal.inf.br/nfe"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="versao"/>
+  </xs:complexType>
+</xs:schema>
