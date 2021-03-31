@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.w3.org/2000/09/xmldsig#" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Signature" type="xd:SignatureType" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"/>
+  <xs:complexType name="CanonicalizationMethodType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="Algorithm"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="SignatureMethodType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="Algorithm"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TransformType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="Algorithm" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TransformsType">
+    <xs:sequence>
+      <xs:element type="xd:TransformType" name="Transform" maxOccurs="unbounded" minOccurs="0" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DigestMethodType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="Algorithm"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ReferenceType">
+    <xs:sequence>
+      <xs:element type="xd:TransformsType" name="Transforms" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"/>
+      <xs:element type="xd:DigestMethodType" name="DigestMethod" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"/>
+      <xs:element type="xs:string" name="DigestValue"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="URI"/>
+  </xs:complexType>
+  <xs:complexType name="SignedInfoType">
+    <xs:sequence>
+      <xs:element type="xd:CanonicalizationMethodType" name="CanonicalizationMethod" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"/>
+      <xs:element type="xd:SignatureMethodType" name="SignatureMethod" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"/>
+      <xs:element type="xd:ReferenceType" name="Reference" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="X509DataType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="X509Certificate"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KeyInfoType">
+    <xs:sequence>
+      <xs:element type="xd:X509DataType" name="X509Data" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SignatureType">
+    <xs:sequence>
+      <xs:element type="xd:SignedInfoType" name="SignedInfo" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"/>
+      <xs:element type="xs:string" name="SignatureValue"/>
+      <xs:element type="xd:KeyInfoType" name="KeyInfo" xmlns:xd="http://www.w3.org/2000/09/xmldsig#"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

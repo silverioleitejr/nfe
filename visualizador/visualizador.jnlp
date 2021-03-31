@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<jnlp spec='6.0+'
+    codebase='http://www.nfe.fazenda.gov.br/portal/visualizador/' href='visualizador.jnlp'>
+  <information>
+    <title>Visualizador - Java Web Start</title>
+    <vendor>SERPRO</vendor>
+    <homepage href='http://www.nfe.fazenda.gov.br/'/>
+    <description>Visualizador de Documentos NFe e CTe</description>
+   <icon href='icone.png'/>
+    <icon kind='splash' href='splash.png'/>
+    <shortcut online='true'>
+      <desktop/>
+      <menu submenu='Visualizador'/>
+    </shortcut>
+    <offline-allowed/>
+  </information>
+  <!--request all permissions from the application. This does not change-->
+  <security>
+    <all-permissions />
+  </security>
+
+
+  <update check='always' policy='prompt-update'/>
+
+  <resources os='Windows' arch='x86_64'>
+    <j2se version='1.6+' java-vm-args='-Xss2024k'/>
+    <jar href='win32.win32.x86_64/plugins/org.eclipse.equinox.launcher_1.2.0.v20110321-2120.jar'/>
+    <extension name='Simple App Feature' href='win32.win32.x86_64/features/visualizador.app.feature_7.5.0.jnlp' />
+    <property name='eclipse.product' value='visualizador.app.product' />
+  </resources>
+
+  <resources os='Windows'>
+    <j2se version='1.6+' java-vm-args='-Xss2024k'/>
+    <jar href='win32.win32.x86/plugins/org.eclipse.equinox.launcher_1.2.0.v20110321-2120.jar'/>
+    <extension name='Simple App Feature' href='win32.win32.x86/features/visualizador.app.feature_7.5.0.jnlp' />
+    <property name='eclipse.product' value='visualizador.app.product' />
+  </resources>
+
+
+  <resources os='Linux' arch='x86_64'>
+    <j2se version='1.6+'  java-vm-args='-Xss2024k'/>
+    <jar href='linux.gtk.x86_64/plugins/org.eclipse.equinox.launcher_1.2.0.v20110321-2120.jar'/>    
+    <extension name='Simple App Feature' href='linux.gtk.x86_64/features/visualizador.app.feature_7.5.0.jnlp' />
+    <property name='osgi.ws' value='gtk'/>  
+    <property name='eclipse.product' value='visualizador.app.product' />
+  </resources>
+
+  <resources os='Linux'>
+    <j2se version='1.6+' java-vm-args='-Xss2024k'/>
+    <jar href='linux.gtk.x86/plugins/org.eclipse.equinox.launcher_1.2.0.v20110321-2120.jar'/>
+    <extension name='Simple App Feature' href='linux.gtk.x86/features/visualizador.app.feature_7.5.0.jnlp' />
+    <property name='osgi.ws' value='gtk'/>
+    <property name='eclipse.product' value='visualizador.app.product' />
+  </resources>
+
+ <!-- The name of the main class to execute. This does not change-->
+  <application-desc main-class='org.eclipse.equinox.launcher.WebStartMain'>
+    <argument>-showsplash</argument>
+  </application-desc>
+
+
+</jnlp>
