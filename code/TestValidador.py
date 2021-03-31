@@ -1,15 +1,16 @@
 from lxml import etree
+from lxml.etree import xmlfile
 
-def validate(xml_path: str, xsd_path: str) -> bool:
 
-    xmlschema_doc = etree.parse(xsd_path)
-    xmlschema = etree.XMLSchema(xmlschema_doc)
+class Validador:
 
-    xml_doc = etree.parse(xml_path)
-    result = xmlschema.validate(xml_doc)
+    def __init__(self, xsd_path: str):
+        xmlschema_doc = etree.parse(xsd_path)
+        self.xmlschema = etree.XMLSchema(xmlschema_doc)
 
-    return result
+    def Check(self, xml_path: str) -> bool:
+        xml_doc = etree.parse(xml_path)
+        result = self.xmlschema.validate(xml_doc)
 
-path = 'D:\projetos\og1.kpmg\projetos\python-nfe\XML'
-xmlFile = 'NFe35170171322150001301550000000477551772681010_procNFe.xml'
-xsdFile = 'NFe35170171322150001301550000000477551772681010_procNFe.xsd'
+        return result
+

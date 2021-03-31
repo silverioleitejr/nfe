@@ -6,8 +6,8 @@
     <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
         <infNFe versao="3.10" Id="NFe35170171322150001301550000000477521876550573">
             <ide>
-                <cUF>35</cUF>
                 <cNF>87655057</cNF>
+                <cUF>35</cUF>
                 <natOp>COMPRA DE MERC.P/REVENDA</natOp>
                 <indPag>1</indPag>
                 <mod>55</mod>
@@ -120,7 +120,7 @@
                     <CFOP>1102</CFOP>
                     <uCom>CX6</uCom>
                     <qCom>17.0000</qCom>
-                    <vUnCom>22.2000000000</vUnCom>
+                    <qCom>22.2000000000</qCom>
                     <vProd>377.40</vProd>
                     <cEANTrib></cEANTrib>
                     <uTrib>CX6</uTrib>
