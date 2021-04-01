@@ -14,5 +14,11 @@ class Validador:
         result = self.xmlschema.validate(xml_doc)
         self.error = self.xmlschema.error_log
 
+    def ListElement(self, xml_path: str):
+        root_node = etree.parse(xml_path).getroot()
+        print(root_node)
+        for tag in root_node.find_all(level):
+            value = tag.get(attribute)
+            if value is not None: print(value)
         return result
 
