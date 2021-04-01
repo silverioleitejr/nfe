@@ -14,6 +14,7 @@ xsdFile = 'NFe35170171322150001301550000000477551772681010_procNFe.xml1.xsd'
 _xml = xmlPath + '/' + xmlFile
 _xsd = xsdPath + '/' + xsdFile
 
+print('------------------------------------------------------')
 print('XML path= ', xmlPath)
 print('XML= ', xmlFile)
 print('------------------------------------------------------')
