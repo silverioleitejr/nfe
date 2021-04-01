@@ -8,9 +8,21 @@ _xml = xmlPath + '/' + xmlFile
 
 tree = ET.parse(_xml)
 doc = tree.getroot()
-nodefind = doc.find('{http://www.portalfiscal.inf.br/nfe}NFe/{http://www.portalfiscal.inf.br/nfe}infNFe/{http://www.portalfiscal.inf.br/nfe}ide/{http://www.portalfiscal.inf.br/nfe}cUF')
+nodefind = doc.find('{http://www.portalfiscal.inf.br/nfe}NFe/'+
+                    '{http://www.portalfiscal.inf.br/nfe}infNFe/'+
+                    '{http://www.portalfiscal.inf.br/nfe}ide/'+
+                    '{http://www.portalfiscal.inf.br/nfe}cUF')
 print (nodefind.attrib)
 print (nodefind.text)
+
+nodefind = doc.find('{http://www.portalfiscal.inf.br/nfe}NFe/')
+print (nodefind.attrib)
+print (nodefind.text)
+
+
+
+
+
 
 
 
