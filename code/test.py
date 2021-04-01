@@ -10,7 +10,7 @@ xmlFile = 'NFe35170171322150001301550000000477551772681010_procNFe.xml'
 _xml = xmlPath + '/' + xmlFile
 
 xsdPath = 'D:/projetos/og1.kpmg/projetos/python-nfe/XSD'
-xsdFile = 'NFe35170171322150001301550000000477551772681010_procNFe.xml1.xsd'
+xsdFile = 'procNFe_v1.10.xsd'
 _xsd = xsdPath + '/' + xsdFile
 
 print('------------------------------------------------------')
